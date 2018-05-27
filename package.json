@@ -1,0 +1,35 @@
+{
+  "name": "vuespa",
+  "version": "1.0.0",
+  "description": "vue 单页应用的一个实践",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server --progress --config webpack.config.js",
+    "build": "webpack -p",
+    "start": "webpack --config webpack.config.js"
+  },
+  "keywords": [
+    "vue",
+    "spa"
+  ],
+  "author": "wangshiping",
+  "license": "ISC",
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "css-loader": "^0.28.11",
+    "style-loader": "^0.21.0",
+    "url-loader": "^1.0.1",
+    "vue": "^2.5.16",
+    "vue-loader": "^15.2.1",
+    "vue-router": "^3.0.1",
+    "vue-template-compiler": "^2.5.16"
+  },
+  "devDependencies": {
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^4.9.1",
+    "webpack-cli": "^2.1.4",
+    "webpack-dev-server": "^3.1.4"
+  }
+}
