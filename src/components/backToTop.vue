@@ -1,5 +1,4 @@
 <style>
-
     .upToTop{
         position:fixed;
         right: 10px;
@@ -10,7 +9,6 @@
         height: 100px;
         display:inline-block;
     }
-
 </style>
 
 
