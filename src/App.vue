@@ -1,11 +1,22 @@
 <template>
     <div id="app">
         <div class="wrapper">
+            <!--<img src="./static/logo.png" alt="">-->
             <header>
+
+                <swiper
+                       :img-items="swiperItems"
+                       :vertical="true"
+                ></swiper>
                 <div class="banner">
                     <img src="http://jdc.jd.com/img/750x260?color=eee&fontSize=40" alt="">
                 </div>
+                <swiper
+                        :img-items="swiperItems"
+                ></swiper>
             </header>
+            <loading :type="loadingtype"></loading>
+            <tips v-on:refresh="refresh" :isError="error">{{errorMsg}}</tips>
             <router-view/>
             <footer>
                 <div class="bottombar">
@@ -21,16 +32,49 @@
 
                 </div>
             </footer>
-
-
         </div>
+        <up-to-top></up-to-top>
 
     </div>
 </template>
 
 <script>
+
+    import tips from './components/Tips';
+
+    import loading from './components/loading';
+
+    import upToTop from './components/backToTop';
+
+    import swiper from './components/swiper';
+
 	export default {
-		name: 'App'
+		name: 'App',
+        data: function(){
+			return {
+				errorMsg: "您的网络出现问题了！",
+				error: false,
+                loadingtype: 1,
+                swiperItems:[
+                	'http://jdc.jd.com/img/750x250?color=eee&fontSize=30',
+                    'http://jdc.jd.com/img/750x250?color=FF00FF&fontSize=30',
+                    'http://jdc.jd.com/img/750x250?color=FFFF00&fontSize=30',
+                    'http://jdc.jd.com/img/750x250?color=CCAABB&fontSize=30',
+                    'http://jdc.jd.com/img/750x250?color=ABCD12&fontSize=30'
+                ]
+            }
+        },
+        components:{
+            tips,
+            loading,
+            upToTop,
+            swiper
+        },
+        methods: {
+			refresh: function(){
+				console.log("refresh!!");
+            }
+        }
 	}
 
 </script>
